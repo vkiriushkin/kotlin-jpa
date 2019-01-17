@@ -1,0 +1,21 @@
+server:
+  port: 8080
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/test
+    username: root
+    password: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    #            spring.jpa.generate-ddl=false # Whether to initialize the schema on startup.
+    properties:
+      #Although Hibernate is database agnostic, we can specify the current database dialect to let it generate better SQL queries for that database.
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+logging:
+  #    pattern:
+  #        console: "%d %-5level %logger : %msg%n"
+  level:
+    org.springframework: INFO
+    org.hibernate: DEBUG
